@@ -1,0 +1,144 @@
+--Table Creation
+
+CREATE TABLE Movies
+(Title varchar(50) not null,
+Year smallint not null,
+director varchar(50),
+Country varchar(50),
+Rating decimal(2,1),
+Genre varchar(50),
+Gross decimal (12,0),
+Producer varchar(50),
+PRIMARY KEY (Title, Year)
+);
+
+CREATE TABLE Actors
+(Title varchar(50) not null,
+Year smallint not null,
+Character_name varchar(50) not null,
+Actor varchar(50) not null,
+PRIMARY KEY (Title, Year, Character_name),
+FOREIGN KEY (Title, Year) REFERENCES Movies (Title, Year)
+);
+
+CREATE TABLE Awards
+(Title varchar(50) not null,
+Year smallint not null,
+Award varchar(50) not null,
+Result varchar(50) not null,
+PRIMARY KEY (Title, Year, Award),
+FOREIGN KEY (Title, Year) REFERENCES Movies (Title, Year)
+);
+
+--Table Population
+
+
+INSERT INTO Movies
+Values ('The Girl With The Dragon Tattoo', 2011, 'David Flincher', 'USA', 7.9, 'Crime', 102515739, 'Scott Rudin');
+
+INSERT INTO Movies
+Values ('Casino Royale', 2006, 'Martin Campbell', 'UK', 7.9, 'Action', 594239066, 'Michael G. Wilson');
+
+INSERT INTO Movies
+Values ('Black Swan', 2010, 'Darren Aronofsky', 'USA', 8.1, 'Psychologic Thriller/Horror', 106952327, 'Scott Franklin');
+
+INSERT INTO Movies
+Values ('The Kings Speech', 2010, 'Tom Hooper', 'UK', 8.2, 'Historical Drama', 373700000, 'Iain Canning');
+
+INSERT INTO Movies
+Values ('Inception', 2010, 'Christopher Nolan', 'USA', 8.8, 'Thriller', 825532764, 'Christopher Nolan');
+
+INSERT INTO Movies
+Values ('Titanic', 1997, 'James Cameron', 'USA', 7.6, 'Romance', 2185372302, 'James Cameron');
+
+INSERT INTO Awards
+Values ('Titanic', 1997, 'Oscar, Director', 'won');
+
+INSERT INTO Awards
+Values ('Titanic', 1997, 'Oscar, Dramatic Score', 'won');
+
+INSERT INTO Awards
+Values ('Titanic', 1997, 'Oscar, Best Picture', 'won');
+
+INSERT INTO Awards
+Values ('Titanic', 1997, 'Oscar, Best Sound', 'won');
+
+INSERT INTO Awards
+Values ('Titanic', 1997, 'Oscar, Best Actress', 'nominated');
+
+INSERT INTO Awards
+Values ('Black Swan', 2010, 'Oscar, Best Actress', 'won');
+
+INSERT INTO Awards
+Values ('Black Swan', 2010, 'Oscar, Best Picture', 'nominated');
+
+INSERT INTO Awards
+Values ('Black Swan', 2010, 'Oscar, Best Directing', 'nominated');
+
+INSERT INTO Awards
+Values ('Inception', 2010, 'Oscar, Best Cinematography', 'won');
+
+INSERT INTO Awards
+Values ('Inception', 2010, 'Oscar, Best Visual Effects', 'won');
+
+INSERT INTO Awards
+Values ('Inception', 2010, 'Oscar, Best Picture', 'nominated');
+
+INSERT INTO Awards
+Values ('The Kings Speech', 2010, 'Oscar, Best Picture', 'won');
+
+INSERT INTO Awards
+Values ('The Kings Speech', 2010, 'Oscar, Best Actor', 'won');
+
+INSERT INTO Awards
+Values ('The Kings Speech', 2010, 'Oscar, Best Cinematography', 'nominated');
+
+INSERT INTO Awards
+Values ('Casino Royale', 2006, 'Bafta, Best Sound', 'won');
+
+INSERT INTO Awards
+Values ('Casino Royale', 2006, 'Bafta, Best Actor', 'nominated');
+
+INSERT INTO Awards
+Values ('The Girl With The Dragon Tattoo', 2011, 'Oscar, Best Film Editing', 'won');
+
+INSERT INTO Awards
+Values ('The Girl With The Dragon Tattoo', 2011, 'Oscar, Best Actress', 'nominated');
+
+INSERT INTO Actors
+Values ('The Girl With The Dragon Tattoo', 2011, 'Mikael Blomkvist', 'Daniel Craig');
+
+INSERT INTO Actors
+Values ('The Girl With The Dragon Tattoo', 2011, 'Lisbeth Salander', 'Rooney Mara');
+
+INSERT INTO Actors
+Values ('Casino Royale', 2006, 'James Bond', 'Daniel Craig');
+
+INSERT INTO Actors
+Values ('Casino Royale', 2006, 'Vesper Lynd', 'Eva Green');
+
+INSERT INTO Actors
+Values ('The Kings Speech', 2010, 'King George VI', 'Colin Firth');
+
+INSERT INTO Actors
+Values ('The Kings Speech', 2010, 'Lionel Logue', 'Geoffrey Rush');
+
+INSERT INTO Actors
+Values ('Inception', 2010, 'Cobb', 'Leonardo DiCaprio');
+
+INSERT INTO Actors
+Values ('Inception', 2010, 'Ariadne', 'Ellen Page');
+
+INSERT INTO Actors
+Values ('Black Swan', 2010, 'Nina Sayers', 'Natalie Portman');
+
+INSERT INTO Actors
+Values ('Black Swan', 2010, 'Lily', 'Mila Kunis');
+
+INSERT INTO Actors
+Values ('Titanic', 1997, 'Jack Dawson', 'Leonardo DiCaprio');
+
+INSERT INTO Actors
+Values ('Titanic', 1997, 'Rose DeWitt Bukater', 'Kate Winslet');
+
+--Queries
